@@ -6,7 +6,7 @@ export const testConn = (drop: boolean = false) => {
     host: "localhost",
     port: 5432,
     username: "postgres",
-    password: "Stanislava89",
+    password: "",
     database: "type-graphql-example-test",
     synchronize: drop,
     dropSchema: drop,
