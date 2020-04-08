@@ -6,6 +6,7 @@ import { LoginResolver } from "../modules/user/Login";
 import { LogoutResolver } from "../modules/user/Logout";
 import { MeResolver } from "../modules/user/Me";
 import { RegisterResolver } from "../modules/user/Register";
+import { ProfilePictureResolver } from "../modules/user/ProfilePicture";
 
 export const createSchema = () => {
   return buildSchema({
@@ -17,6 +18,7 @@ export const createSchema = () => {
       LogoutResolver,
       MeResolver,
       RegisterResolver,
+      ProfilePictureResolver,
     ],
     authChecker: ({ context: { req } }) => {
       if (req.session.userId) {
@@ -26,3 +28,5 @@ export const createSchema = () => {
     },
   });
 };
+
+'{"query":"mutation AddProfilePicture($picture: Upload!) {\n  addProfilePicture(picture: $picture)\n}"}';
